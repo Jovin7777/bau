@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In Bearbeitung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e5e5e2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header, footer {
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  header { border-bottom: 1px solid var(--line); }
+  footer { border-top: 1px solid var(--line); margin-top: auto; }
+
+  .logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d97706;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 48px;
+  }
+
+  .content {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.1s forwards;
+  }
+
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.25s forwards;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  p.lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 420px;
+    margin: 0 auto 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.4s forwards;
+  }
+
+  .divider {
+    width: 32px;
+    height: 1px;
+    background: var(--line);
+    margin: 0 auto 48px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.55s forwards;
+  }
+
+  .contact {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.7s forwards;
+  }
+
+  .contact-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .contact-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-links .sep {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .contact a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    transition: opacity 0.2s ease;
+  }
+
+  .contact a:hover { opacity: 0.6; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  @media (max-width: 640px) {
+    header, footer { padding: 24px; font-size: 12px; }
+    main { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">Ihr Logo</div>
+    <div class="status"><span class="dot"></span><span>In Bearbeitung</span></div>
+  </header>
+
+  <main>
+    <div class="content">
+      <div class="label">Hinweis</div>
+      <h1>Unsere Website wird <em>überarbeitet</em>.</h1>
+      <p class="lead">In Kürze erwartet Sie hier ein neuer Auftritt. Vielen Dank für Ihre Geduld.</p>
+      <div class="divider"></div>
+      <div class="contact">
+        <div class="contact-label">Kontakt</div>
+        <div class="contact-links">
+          <a href="mailto:info@responz.ch">info@responz.ch</a>
+          <span class="sep">·</span>
+          <a href="tel:+41799020600">079 902 06 00</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2026</div>
+    <div>Bald wieder erreichbar</div>
+  </footer>
+</body>
+</html>
